@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mapa de Leitos</title>
+    <link rel="stylesheet" href="home.css">
+</head>
+
+<body>
+
+    <div class="container">
+
+        <!-- Sidebar -->
+        <aside class="sidebar">
+            <div class="logo">Mapa de Leitos</div>
+
+            <nav>
+                <ul class="menu">
+                    <li><a href="homepage.html" class="active">Mapa de Leitos</a></li>
+                    <li><a href="leitos.html">Gerenciar Leitos</a></li>
+                    <li><a href="index.html">Cadastrar Funcionário</a></li>
+                    <li><a href="login.html">Sair</a></li>
+                </ul>
+            </nav>
+        </aside>
+
+        <!-- Conteúdo -->
+        <main class="content">
+
+            <!-- Cabeçalho -->
+            <header class="header">
+                <div>
+                    <h1>Mapa de Leitos</h1>
+                    <p class="subtitle" id="dataAtual"></p>
+                </div>
+
+                <div class="profile">
+                    <span class="avatar">MS</span>
+                    <span>Maria Silva</span>
+                </div>
+            </header>
+
+            <!-- Resumo -->
+            <section class="summary">
+                <div class="summary-card">
+                    <div class="summary-icon">🛏</div>
+                    <div class="summary-info">
+                        <h4>Total de Leitos</h4>
+                        <span id="totalLeitos">0</span>
+                    </div>
+                </div>
+
+                <div class="summary-card">
+                    <div class="summary-icon">👤</div>
+                    <div class="summary-info">
+                        <h4>Ocupados</h4>
+                        <span id="totalOcupados">0</span>
+                    </div>
+                </div>
+
+                <div class="summary-card">
+                    <div class="summary-icon">✔</div>
+                    <div class="summary-info">
+                        <h4>Disponíveis</h4>
+                        <span id="totalLivres">0</span>
+                    </div>
+                </div>
+
+                <div class="summary-card">
+                    <div class="summary-icon">⚠</div>
+                    <div class="summary-info">
+                        <h4>Isolamento</h4>
+                        <span id="totalIsolamento">0</span>
+                    </div>
+                </div>
+
+                <div class="summary-card">
+                    <div class="summary-icon">👁</div>
+                    <div class="summary-info">
+                        <h4>Observação</h4>
+                        <span id="totalObservacao">0</span>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Filtros por setor (criados pelo script conforme os leitos cadastrados) -->
+            <section class="filters" id="filtros"></section>
+
+            <!-- Pesquisa -->
+            <input type="search" class="search" id="busca" placeholder="Buscar por leito ou paciente">
+
+            <!-- Legenda -->
+            <div class="legend">
+                <span><i class="dot green"></i>Livre</span>
+                <span><i class="dot red"></i>Ocupado</span>
+                <span><i class="dot blue"></i>Exame</span>
+                <span><i class="dot purple"></i>Isolamento</span>
+                <span><i class="dot yellow"></i>Observação</span>
+                <span><i class="dot gray"></i>Alta</span>
+            </div>
+
+            <!-- Grid principal -->
+            <div class="main">
+
+                <!-- Setores e leitos -->
+                <div id="setores"></div>
+
+                <!-- Atualizações -->
+                <aside class="updates">
+                    <h3>Últimas atualizações</h3>
+                    <div id="atualizacoes"></div>
+                </aside>
+
+            </div>
+
+        </main>
+    </div>
+
+    <script src="dados.js"></script>
+    <script src="home.js"></script>
+</body>
+
+</html>

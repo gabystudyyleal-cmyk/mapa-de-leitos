@@ -1,0 +1,150 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Gerenciar Leitos</title>
+    <link rel="stylesheet" href="home.css">
+</head>
+
+<body>
+
+    <div class="container">
+
+        <!-- Sidebar -->
+        <aside class="sidebar">
+            <div class="logo">Mapa de Leitos</div>
+
+            <nav>
+                <ul class="menu">
+                    <li><a href="homepage.html">Mapa de Leitos</a></li>
+                    <li><a href="leitos.html" class="active">Gerenciar Leitos</a></li>
+                    <li><a href="index.html">Cadastrar Funcionário</a></li>
+                    <li><a href="login.html">Sair</a></li>
+                </ul>
+            </nav>
+        </aside>
+
+        <!-- Conteúdo -->
+        <main class="content">
+
+            <header class="header">
+                <div>
+                    <h1>Gerenciar Leitos</h1>
+                    <p class="subtitle">Os leitos cadastrados aqui aparecem no Mapa de Leitos.</p>
+                </div>
+
+                <div class="profile">
+                    <span class="avatar">MS</span>
+                    <span>Maria Silva</span>
+                </div>
+            </header>
+
+            <p id="msg" class="aviso"></p>
+
+            <!-- Adicionar / editar um leito -->
+            <section class="section">
+                <div class="section-title">
+                    <span id="tituloForm">Adicionar leito</span>
+                </div>
+
+                <form id="formLeito">
+                    <div class="form-grid">
+                        <div class="campo">
+                            <label for="codigo">Código do leito</label>
+                            <input type="text" id="codigo" placeholder="Ex.: UTI-01" required>
+                        </div>
+
+                        <div class="campo">
+                            <label for="setor">Setor</label>
+                            <input type="text" id="setor" list="listaSetores" placeholder="Ex.: UTI" required>
+                            <datalist id="listaSetores"></datalist>
+                        </div>
+
+                        <div class="campo">
+                            <label for="status">Status</label>
+                            <select id="status">
+                                <option value="free">Livre</option>
+                                <option value="busy">Ocupado</option>
+                                <option value="exam">Exame</option>
+                                <option value="isolation">Isolamento</option>
+                                <option value="observation">Observação</option>
+                                <option value="discharge">Alta</option>
+                            </select>
+                        </div>
+
+                        <div class="campo" id="campoPaciente">
+                            <label for="paciente">Paciente</label>
+                            <input type="text" id="paciente" placeholder="Nome do paciente">
+                        </div>
+                    </div>
+
+                    <div class="form-botoes">
+                        <button type="submit" class="btn-salvar" id="btnSalvar">Adicionar leito</button>
+                        <button type="button" class="btn-cancelar" id="btnCancelar" hidden>Cancelar edição</button>
+                    </div>
+                </form>
+            </section>
+
+            <!-- Adicionar vários de uma vez -->
+            <section class="section">
+                <div class="section-title">
+                    <span>Adicionar vários leitos de uma vez</span>
+                </div>
+
+                <form id="formVarios">
+                    <div class="form-grid">
+                        <div class="campo">
+                            <label for="setorVarios">Setor</label>
+                            <input type="text" id="setorVarios" list="listaSetores" placeholder="Ex.: Pediatria" required>
+                        </div>
+
+                        <div class="campo">
+                            <label for="prefixo">Prefixo do código</label>
+                            <input type="text" id="prefixo" placeholder="Ex.: PED" required>
+                        </div>
+
+                        <div class="campo">
+                            <label for="quantidade">Quantidade</label>
+                            <input type="number" id="quantidade" min="1" max="100" value="10" required>
+                        </div>
+                    </div>
+
+                    <div class="form-botoes">
+                        <button type="submit" class="btn-salvar">Criar leitos livres</button>
+                    </div>
+                </form>
+            </section>
+
+            <!-- Lista de leitos -->
+            <section class="section">
+                <div class="section-title">
+                    <span>Leitos cadastrados</span>
+                    <small id="contagem"></small>
+                </div>
+
+                <div class="tabela-wrap">
+                    <table>
+                        <thead>
+                            <tr>
+                                <th>Leito</th>
+                                <th>Setor</th>
+                                <th>Status</th>
+                                <th>Paciente</th>
+                                <th>Ações</th>
+                            </tr>
+                        </thead>
+                        <tbody id="tabela"></tbody>
+                    </table>
+                </div>
+            </section>
+
+        </main>
+    </div>
+
+    <script src="dados.js"></script>
+    <script src="leitos.js"></script>
+</body>
+
+</html>

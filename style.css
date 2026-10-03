@@ -1,0 +1,84 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+body {
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-image: url("cadastro.jpeg");
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+}
+
+.card {
+    width: 900px;
+    background: rgba(234, 242, 249, 0.95);
+    border-radius: 20px;
+    padding: 40px;
+    box-shadow: 0 10px 35px rgba(0, 0, 0, .25);
+}
+
+.card h1 {
+    text-align: center;
+    color: #73a9d3;
+    margin-bottom: 35px;
+}
+
+.formulario {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 20px;
+}
+
+.campo {
+    display: flex;
+    flex-direction: column;
+}
+
+.campo label {
+    margin-bottom: 8px;
+    font-weight: bold;
+    color: #444;
+}
+
+.campo input,
+.campo select {
+    padding: 12px;
+    border: 1px solid #ccc;
+    border-radius: 8px;
+    font-size: 15px;
+}
+
+.campo input:focus,
+.campo select:focus {
+    outline: none;
+    border: 2px solid #38bdf8;
+}
+
+.botao {
+    display: flex;
+    justify-content: center;
+    margin-top: 35px;
+}
+
+.botao button {
+    width: 260px;
+    padding: 14px;
+    border: none;
+    border-radius: 10px;
+    background: #53bee8;
+    color: white;
+    font-size: 18px;
+    cursor: pointer;
+    transition: .3s;
+}
+
+.botao button:hover {
+    background: #53bee8;
+}
